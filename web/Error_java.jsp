@@ -12,6 +12,6 @@
         <title>Error_java</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Error_java</h1>
     </body>
 </html>
