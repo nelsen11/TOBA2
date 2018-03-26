@@ -29,7 +29,7 @@ public class NewCustomerServlet extends HttpServlet {
             String state = request.getParameter("state");
             String zipcode = request.getParameter("zipcode");
             String email = request.getParameter("email");
-            
+            <br>
             User user = new User(firstname, lastName, phone, address, city, state, zipcode, email);
             UserDB.insert(user);
             
