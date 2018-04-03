@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 public class NewCustomerServlet extends HttpServlet {
     
     
-    protected void doPost
+    protected void processRequest
         (HttpServletRequest request, 
          HttpServletResponse response)
          throws ServletException, IOException {    
@@ -29,13 +29,10 @@ public class NewCustomerServlet extends HttpServlet {
             String state = request.getParameter("state");
             String zipcode = request.getParameter("zipcode");
             String email = request.getParameter("email");
-            <br>
-            User user = new User(firstname, lastName, phone, address, city, state, zipcode, email);
-            UserDB.insert(user);
+            //response.sendRedirect("Success.html");
             
-            request.setAttribute("user", user);
-            url = "/thanks.jsp";
-        }
+            String url = "/Success.html";
+        
         
         getServletContext()
                 .getRequestDispatcher(url)
@@ -43,7 +40,7 @@ public class NewCustomerServlet extends HttpServlet {
         
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+        // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -57,7 +54,8 @@ public class NewCustomerServlet extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
     }
-
+    
+    
     /**
      * Handles the HTTP <code>POST</code> method.
      *
@@ -71,6 +69,7 @@ public class NewCustomerServlet extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
     }
+
 
     /**
      * Returns a short description of the servlet.
